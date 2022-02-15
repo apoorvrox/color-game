@@ -1,0 +1,96 @@
+body
+{
+	background: #161618;
+}
+
+
+
+#top
+{
+	background-color: rgb(32, 174, 179);
+	padding: 10px;
+	transition: background-color 0.3s;
+    text-align: center;
+    color:whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.display-6
+{
+	font-size: 50px;
+	font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	color: antiquewhite;
+	font-weight: 600;
+	font-size: 50px;
+	text-align: center;
+	text-decoration: none;
+	white-space: nowrap;
+	text-shadow: #4d4d4d;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: rgb(48, 48, 48);
+}
+
+.display-1
+{
+	font-size: 100px;
+	padding-top: 30px;
+	font-family: Verdana, sans-serif;
+	text-align: center;
+
+}
+
+#icons
+{
+	background-color: white;
+	text-align: center;
+    font-family: "Helvetica", sans-serif;
+
+}
+
+#icons a
+{
+	font-weight: 600;
+	color: rgb(109, 27, 163);
+	font-size: 2rem;
+}
+
+#icons .link:hover a
+{
+	color :white;
+	background: rgb(109, 27, 163);
+    text-decoration: double;
+	float: inline-start;
+}
+
+.lead
+{
+    font-family: "Helvetica", sans-serif;
+    align-content: center;
+    padding-right: 120px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+#colorss
+{
+	margin: 0 auto;
+	max-width: 666px;
+	margin-top: 12px;
+}
+
+.colorss
+{
+	max-width: 666px;
+}
+
+.square
+{
+	width: 200px;
+	margin : 10px;
+	padding-bottom: 200px;
+	float : left;
+	border-radius: 25px;
+	transition: background-color 0.3s;
+}
