@@ -2,19 +2,30 @@ var sq = document.querySelectorAll(".square")
 var colorSelect = document.getElementById("colorSelected")
 var topp = document.getElementById("top")
 var message = document.querySelector("#message")
-var choice = document.querySelector("#choice")
+var Easy = document.querySelector("#choice")
+var Hard = document.querySelector('#hard')
 var color
 var selected
 var totColor = []
+
 var colors = colorAll(6)
 colorChoose()
 colorSq()
 var ss = "RGB( "+totColor[selected][0]+" , "+totColor[selected][1]+" , "+totColor[selected][2]+" )"
 colorSelect.textContent = ss
 
+Hard.addEventListener("click", function()
+{
+	message.textContent = "Choose Corresponding Palette"
+	cnt=0
+	fl=0
+	cc1=0
+	cc2=0
+	Hard.classList.add("slct")
+	Easy.classList.remove("slct")
+})
 
-
-choice.addEventListener("click", function()
+Easy.addEventListener("click", function()
 {
 	colors = colorAll(3)
 	colorChoose()
@@ -30,6 +41,8 @@ choice.addEventListener("click", function()
 	fl=0
 	cc1=0
 	cc2=0
+	Easy.classList.add("slct")
+	Hard.classList.remove("slct")
 }
 )
 
