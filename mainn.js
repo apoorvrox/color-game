@@ -6,19 +6,19 @@ var choice = document.querySelector("#choice")
 var color
 var selected
 var totColor = []
-
-
 var colors = colorAll(6)
-colorPicker()
-colorSquares()
+colorChoose()
+colorSq()
 var ss = "RGB( "+totColor[selected][0]+" , "+totColor[selected][1]+" , "+totColor[selected][2]+" )"
 colorSelect.textContent = ss
 
 
-choice.addEventListener("click", function(){
+
+choice.addEventListener("click", function()
+{
 	colors = colorAll(3)
-	colorPicker()
-    colorSquares()
+	colorChoose()
+    colorSq()
 	for(var i=3;i<6;i++)
 	{
 		sq[i].style.display = "none";
@@ -28,17 +28,26 @@ choice.addEventListener("click", function(){
 	message.textContent = "Choose Corresponding Palette"
 	cnt=0
 	fl=0
-})
+	cc1=0
+	cc2=0
+}
+)
 
 for(var i=0 ; i<colors.length ; i++)
 {
     var cnt=0;
 	var fl=0;
-	sq[i].addEventListener("click", function(){
+	var cc1=0,cc2=0;
+	sq[i].addEventListener("click", function()
+	{
 		var clickedColor = (this.style.backgroundColor)
 		if(clickedColor === color)
 		{
-			new Audio("./leee-goo.mp3").play()
+			if(cc1==0)
+			{
+				new Audio("./leee-goo.mp3").play()
+				cc1++;
+			}
 			topp.style.backgroundColor = color;
 			for(var i=0 ; i<sq.length ; i++)
 			{
@@ -51,7 +60,7 @@ for(var i=0 ; i<colors.length ; i++)
 		else
 		{
 			++cnt
-			if(cnt === colors.length-1)
+			if(cnt === colors.length-1 && cc2==0)
 			{	
 				--cnt
 				this.style.backgroundColor = "#161618"
@@ -64,40 +73,53 @@ for(var i=0 ; i<colors.length ; i++)
 				}
 				cnt=0
 				fl=1
+				cc2=1;
 			}	
 			else
 			{
 				this.style.backgroundColor = "#161618"
-				new Audio("./suss.mp3").play()
-				if(fl==0)
-					{message.textContent = "Wrong Choice, Try Again"
+				if(cc2==0)
+				{
+					new Audio("./suss.mp3").play()
+					if(fl==0)
+					{
+						message.textContent = "Wrong Choice, Try Again"
 					}
-				else
-					{message.textContent = "You Lose Noob"
-					fl=0}
+					else
+					{
+						message.textContent = "You Lose Noob"
+						fl=0
+					}
+				}
 			}
 		}
-	})
+	}
+	)
 }
 
-function colorPicker()	{
+
+
+function colorChoose()	
+{
 	var a = Math.floor((Math.random()*colors.length));
 	color = colors[a]
     selected = a
 }
 
-function colorAll(num)	{
+function colorAll(num)	
+{
 	var arr = []
 	totColor = []
 	for(var i=0; i<num; i++)
 	{
-		var k = randomColor()
+		var k = rnd()
 		arr.push(k)
 	}
 	return arr
 }
 
-function randomColor()	{
+function rnd()	
+{
     var ar = []
 	var r = Math.floor(Math.random()*256)
 	var g = Math.floor(Math.random()*256)
@@ -109,7 +131,10 @@ function randomColor()	{
 	return ("rgb("+r+", "+g+", "+b+")");	
 }
 
-function colorSquares()	{
+function colorSq()	
+{
 	for(var i=0;i<6;i++)
+	{
 		sq[i].style.backgroundColor=colors[i]
+	}	
 }
